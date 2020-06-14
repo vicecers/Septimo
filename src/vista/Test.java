@@ -24,39 +24,7 @@ public class Test {
         // TODO code application logic 
         // Connection cn;  
         //cn = new Conexion().getConexion(); //prueba de conexion a la base de datos
-        // Datos d = new Datos(); //prueba de acceso a datos
-
-        Usuarios user = new Usuarios();
-        ConsultasUsuarios cu = new ConsultasUsuarios();
-        /*
-        user.setUser_id(1000);
-        user.setUser_account("Usuario1");
-        user.setUser_pass("contraseña1");
-        user.setUser_type(100);
-
-        cu.Registrar(user);
-         */
-
-      /*
-        user.setUser_id(3);
-        user.setUser_account("Usuario1");
-        user.setUser_pass("contraseña1");
-        user.setUser_type(100);
-        cu.Actualizar(user);
-        
-        */
-      
-        /*user.setUser_id(4);
-        cu.Eliminar(user);*/
-        
-        user.setUser_id(3);
-        cu.Buscar(user);
-        
-        System.out.println(user.getUser_id());
-        System.out.println(user.getUser_account());
-        System.out.println(user.getUser_pass());
-        System.out.println(user.getUser_type());
-        
+        // Datos d = new Datos(); //prueba de acceso a datos          
         
         frmTabla tabla = new frmTabla();  //prueba carga de la tabla
         tabla.setVisible(true);
