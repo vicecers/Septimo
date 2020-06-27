@@ -23,13 +23,7 @@ public class crtFormulario implements ActionListener {
      */
     public crtFormulario() {
 
-        frmPrueba f = new frmPrueba();
-
-        f.setTitle("Formulario de prueba");
-
-        f.setVisible(true);
-        
-        f.cmdPrueba.addActionListener(this);
+     
 
     }
 

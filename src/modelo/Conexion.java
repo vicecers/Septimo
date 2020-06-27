@@ -42,17 +42,23 @@ public class Conexion {
         this.baseDeDatos = "db_septimo";
         this.puerto = 3306;
         String url = "jdbc:mysql://" + host + "/" + baseDeDatos;
-
+      
         try {
             cn = DriverManager.getConnection(url, usuario, pass);
             System.out.println("Conexion OK");
+            System.out.println(url +usuario + pass);
         } catch (SQLException ex) {
             System.out.println("Error " + ex.toString());
 
         }
+        
+       
 
         return cn;
     }
+    
+    
+    
 
     
 

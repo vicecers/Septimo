@@ -22,21 +22,13 @@ public class Test {
      */
     public static void main(String[] args) {
         // TODO code application logic 
-        // Connection cn;  
-        //cn = new Conexion().getConexion(); //prueba de conexion a la base de datos
-        // Datos d = new Datos(); //prueba de acceso a datos    
+         Connection cn;  
+        cn = new Conexion().getConexion(); //prueba de conexion a la base de datos
+        Datos d = new Datos(); //prueba de acceso a datos    
 
         Usuarios user = new Usuarios();
-
-        user.setUser_id(100);
-        user.setUser_account("usuario100");
-        user.setUser_pass("usuario100");
-        user.setUser_type(100);
-
-        ConsultasUsuarios cu = new ConsultasUsuarios();
-        cu.Registrar(user);
-
         frmTabla tabla = new frmTabla();  //prueba carga de la tabla
         tabla.setVisible(true);
     }
 }
+
