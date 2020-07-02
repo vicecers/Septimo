@@ -9,6 +9,7 @@ package vista;
  *
  * @author vicec
  */
+import controlador.CrtUsuarios;
 import modelo.Conexion;
 import modelo.Datos;
 import java.sql.*;
@@ -22,13 +23,13 @@ public class Test {
      */
     public static void main(String[] args) {
         // TODO code application logic 
-         Connection cn;  
-        cn = new Conexion().getConexion(); //prueba de conexion a la base de datos
-        Datos d = new Datos(); //prueba de acceso a datos    
 
+        frmUser formulario = new frmUser();
+        ConsultasUsuarios consulta = new ConsultasUsuarios();
         Usuarios user = new Usuarios();
-        frmTabla tabla = new frmTabla();  //prueba carga de la tabla
-        tabla.setVisible(true);
+
+        CrtUsuarios control = new CrtUsuarios(formulario, consulta, user);
+        control.Iniciar();
+        
     }
 }
-
