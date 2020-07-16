@@ -70,7 +70,7 @@ public class ConsultasUsuarios extends Conexion {
         }
     }
 
-    public void Buscar(Usuarios user) {
+    public boolean Buscar(Usuarios user) {
         Connection cn = getConexion();
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -83,20 +83,20 @@ public class ConsultasUsuarios extends Conexion {
             ps.setInt(1, user.getUser_id());
 
             rs = ps.executeQuery();
-            
-            if (rs.next()){
-                
+
+            if (rs.next()) {
+
                 user.setUser_id(rs.getInt(1));
                 user.setUser_account(rs.getString(2));
                 user.setUser_pass(rs.getString(3));
                 user.setUser_type(rs.getInt(4));
-                
+                return true;
             }
-            
-            
+            return false;
 
         } catch (SQLException ex) {
             System.out.println("usuario no encontrado" + ex.toString());
+            return false;
         }
     }
 

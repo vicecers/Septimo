@@ -30,31 +30,51 @@ public class CrtUsuarios implements ActionListener {
         user = new Usuarios();
 
         this.formulario.btnRegistrar.addActionListener(this);
+        this.formulario.btnModificar.addActionListener(this);
         this.formulario.btnBuscar.addActionListener(this);
 
     }
 
     public void Iniciar() {
+
         formulario.setVisible(true);
+        formulario.setLocationRelativeTo(null);
+        formulario.setTitle("Crud Java MVC");
+        Clear();
+    }
+
+    public void Clear() {
+        formulario.txt_user_id.setText(null);
+        formulario.txt_user_account.setText(null);
+        formulario.txt_user_pass.setText(null);
+        formulario.txt_user_type.setText(null);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
-        if(e.getSource()==formulario.btnBuscar){
-            System.out.println("Elemento buscado");
-        }
-        if(e.getSource()==formulario.btnRegistrar){
+        if (e.getSource() == formulario.btnRegistrar) {
             user.setUser_id(Integer.parseInt(formulario.txt_user_id.getText()));
             user.setUser_account(formulario.txt_user_account.getText());
             user.setUser_pass(formulario.txt_user_pass.getText());
             user.setUser_type(Integer.parseInt(formulario.txt_user_type.getText()));
-            
-            
             consulta.Registrar(user);
-            
         }
+        if (e.getSource() == formulario.btnBuscar) {
+            user.setUser_id(Integer.parseInt(formulario.txtBuscar.getText()));
+            consulta.Buscar(user);
+            formulario.txt_user_id.setText(String.valueOf(user.getUser_id()));
+            formulario.txt_user_account.setText(user.getUser_account());
+            formulario.txt_user_pass.setText(user.getUser_pass());
+            formulario.txt_user_type.setText(String.valueOf(user.getUser_type()));
 
+        }
+        if (e.getSource() == formulario.btnModificar) {
+            user.setUser_id(Integer.parseInt(formulario.txt_user_id.getText()));
+            user.setUser_account(formulario.txt_user_account.getText());
+            user.setUser_pass(formulario.txt_user_pass.getText());
+            user.setUser_type(Integer.parseInt(formulario.txt_user_type.getText()));
+        }
+        consulta.Actualizar(user);
     }
 
 }
